@@ -1,0 +1,25 @@
+next.config.ts
+  8c4edd23b84247f6 4
+Dockerfile
+  8c4edd23b84247f6 1-58
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.0",
+  "base_commit_sha": "4ccf6c99c5ed818853748b4e0f5adb0c24d22f08",
+  "prompts": {
+    "8c4edd23b84247f6": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "b27ec819-0a50-4461-aa01-caa8e00ed3c2",
+        "model": "gemini-3-flash-preview"
+      },
+      "human_author": "Ashleigh Walker",
+      "messages": [],
+      "total_additions": 59,
+      "total_deletions": 0,
+      "accepted_lines": 59,
+      "overriden_lines": 0
+    }
+  }
+}
