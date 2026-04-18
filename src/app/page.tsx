@@ -16,9 +16,9 @@ export default function HomePage() {
             <div className="flex justify-between"><span>SCAN_DEPTH:</span> <span className="text-accent-cyan">LEVEL 5</span></div>
           </div>
           <div className="opacity-70 space-y-1">
-            <div>[0x52de...292d8] -> [SYNC] -> LEV_TOKEN</div>
-            <div>[L5_SURVEILLANCE] -> ACTIVE -> NO_LEAKS</div>
-            <div>[AUTO_CORRECTION] -> NODE_01 -> STANDBY</div>
+            <div>{"[0x52de...292d8] -> [SYNC] -> LEV_TOKEN"}</div>
+            <div>{"[L5_SURVEILLANCE] -> ACTIVE -> NO_LEAKS"}</div>
+            <div>{"[AUTO_CORRECTION] -> NODE_01 -> STANDBY"}</div>
           </div>
           <div className="text-[10px] opacity-40 border-t border-foreground pt-2">
             INFRASTRUCTURE_INTELLIGENCE v3.2.1 | ENCRYPTED
