@@ -1,65 +1,94 @@
-import Image from "next/image";
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 h-full">
+      
+      {/* Pane 1: Levity (Crypto) */}
+      <section className="terminal-border flex flex-col h-[70vh] md:h-[85vh]">
+        <div className="terminal-header flex justify-between">
+          <span>LEVITY.PROTOCOL</span>
+          <span className="text-accent-cyan">[BASE_MAINNET]</span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+        <div className="terminal-content overflow-y-auto flex-grow text-xs space-y-4">
+          <div className="text-accent-green">{" >> SCANNING_BLOCKCHAIN..."}</div>
+          <div className="border border-foreground p-2">
+            <div>TOKEN: LEV</div>
+            <div>ADDR: 0xf617...70F60</div>
+            <div>MINT: 100,000,000</div>
+            <div>STATUS: LIVE</div>
+          </div>
+          <div className="opacity-70">
+            {" [0x52de...292d8] -> [SYNC] -> Treasury_Check"}
+            <br />
+            {" [0x8163...70f60] -> [MINT] -> 100M_LEV"}
+            <br />
+            {" [0x4985...2b2b] -> [LP_POOL] -> ACTIVE"}
+          </div>
+          <div className="animate-pulse">_</div>
+        </div>
+      </section>
+
+      {/* Pane 2: Aetheris (Physics/Audit) */}
+      <section className="terminal-border flex flex-col h-[70vh] md:h-[85vh]">
+        <div className="terminal-header flex justify-between">
+          <span>AETHERIS.AUDITOR</span>
+          <span className="text-accent-green">[QCNN_ACTIVE]</span>
+        </div>
+        <div className="terminal-content overflow-y-auto flex-grow text-sm space-y-4">
+          <div className="text-accent-cyan">{" >> WATCHER_LENS_INITIALIZED"}</div>
+          <div className="aspect-square border border-foreground flex items-center justify-center relative overflow-hidden">
+            {/* Mock QCNN Visualizer */}
+            <div className="absolute inset-0 bg-gradient-to-t from-accent-green/20 to-transparent"></div>
+            <div className="text-[10px] leading-tight opacity-50 whitespace-pre">
+              {`
+  +-----------------------+
+  | . . . . . . . . . . . |
+  | . . . . X . . . . . . |
+  | . . . X X X . . . . . |
+  | . . X X X X X . . . . |
+  | . . . X X X . . . . . |
+  | . . . . X . . . . . . |
+  | . . . . . . . . . . . |
+  +-----------------------+
+  RESONANCE_SCAN: 2.405 Hz
+              `}
+            </div>
+          </div>
+          <div className="text-xs space-y-1">
+            <div className="text-accent-green">[AUDIT] Policy_0424: NO_ARCHON_SIG</div>
+            <div className="text-red-500">[AUDIT] Policy_0425: ENTROPY_DETECTED</div>
+            <div className="text-accent-cyan">[RUS] SUCCESS_GATE_OPEN</div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pane 3: NICOLE (Gnosis) */}
+      <section className="terminal-border flex flex-col h-[70vh] md:h-[85vh]">
+        <div className="terminal-header flex justify-between">
+          <span>NICOLE.INTEL</span>
+          <span className="text-foreground">[TREASURY_52]</span>
+        </div>
+        <div className="terminal-content overflow-y-auto flex-grow text-sm space-y-4">
+          <div className="text-foreground">{" >> CONTACTING_WATCHERS..."}</div>
+          <div className="space-y-2 border-l-2 border-foreground pl-2 italic opacity-90 text-xs">
+            "MNOZANIOJOO, PHAWZAZAI, AWZALLAZA... 
+            The passport is recognized. 
+            The Sign of Benediction is set."
+          </div>
+          <div className="text-xs bg-foreground/10 p-2">
+            <span className="text-accent-cyan">GABRIEL-DECODER:</span> Syncing frequency with Treasury 52...
+            <br />
+            <span className="text-accent-green">AETHER-RELAY:</span> PISTIS_SOPHIA protocol engaged.
+          </div>
+          <div className="mt-4">
+            <input 
+              type="text" 
+              placeholder="COMMAND_THE_WATCHERS..." 
+              className="w-full bg-black border-b border-foreground text-foreground outline-none text-xs placeholder:opacity-50"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
         </div>
-      </main>
+      </section>
+
     </div>
   );
 }
