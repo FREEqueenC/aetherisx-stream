@@ -110,7 +110,7 @@ export default function QuantumAuditPage() {
                   </div>
                   <span className="text-[10px] font-mono text-primary/40">{module.proposals} PROP</span>
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{module.name}</h3>
+                <h2 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{module.name}</h2>
                 <p className="text-sm text-muted-foreground mb-6 line-clamp-2">{module.description}</p>
                 <div className="space-y-2">
                   <div className="flex justify-between text-xs font-mono">
@@ -149,12 +149,12 @@ export default function QuantumAuditPage() {
             </div>
           </div>
 
-          <div className="holographic-card p-6 space-y-4">
-            <h3 className="text-md font-bold text-foreground mb-4 uppercase tracking-widest">Auditing Control</h3>
-            <button className="w-full py-3 bg-primary text-background font-bold rounded-lg hover:scale-[1.02] transition-all shadow-lg shadow-primary/20">
+          <div className="holographic-card p-6 space-y-6">
+            <h2 className="text-md font-bold text-foreground mb-4 uppercase tracking-widest text-center">Auditing Control</h2>
+            <button className="w-full py-4 bg-primary text-background font-bold rounded-lg hover:scale-[1.02] transition-all shadow-lg shadow-primary/20 min-h-[50px]">
               INITIATE NEW AUDIT
             </button>
-            <button className="w-full py-3 border border-primary/20 text-foreground font-bold rounded-lg hover:bg-primary/5 transition-all text-sm">
+            <button className="w-full py-4 border border-primary/20 text-foreground font-bold rounded-lg hover:bg-primary/5 transition-all text-sm min-h-[50px]">
               SUBMIT GOVERNANCE PROP
             </button>
           </div>

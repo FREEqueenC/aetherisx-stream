@@ -45,33 +45,33 @@ export default function HomePage() {
         </div>
 
         {/* Hub Navigator */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-12 text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-12 text-left">
           
           <Link href="/quantum" className="holographic-card p-6 group">
-            <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Quantum Auditing</h3>
+            <h2 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Quantum Auditing</h2>
             <p className="text-sm text-muted-foreground">Monitor AI decision coherence across parallel inference pathways and PQC readiness.</p>
           </Link>
 
           <Link href="/infrastructure" className="holographic-card p-6 group">
-            <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Infrastructure Intelligence</h3>
+            <h2 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Infrastructure Intelligence</h2>
             <p className="text-sm text-muted-foreground">Operational surveillance and leak detection across enterprise data grids (L5 Depth).</p>
           </Link>
 
           <Link href="/ai" className="holographic-card p-6 group">
-            <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Intelligence Relay</h3>
+            <h2 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Intelligence Relay</h2>
             <p className="text-sm text-muted-foreground">Direct interface with NICOLE. Synchronizing Biosphere DNA with Datasphere integrity.</p>
           </Link>
 
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-12">
           <Link href="/verify" className="w-full sm:w-auto">
-            <button className="w-full px-10 py-4 bg-primary text-background font-bold rounded-xl hover:scale-105 transition-all shadow-xl shadow-primary/25">
+            <button className="w-full sm:w-auto px-12 py-5 bg-primary text-background font-bold rounded-xl hover:scale-105 transition-all shadow-xl shadow-primary/25 min-h-[60px]">
               INITIATE CLEARANCE
             </button>
           </Link>
-          <button className="w-full sm:w-auto px-10 py-4 border border-primary/40 text-primary font-bold rounded-xl hover:bg-primary/10 transition-all">
+          <button className="w-full sm:w-auto px-12 py-5 border border-primary/40 text-primary font-bold rounded-xl hover:bg-primary/10 transition-all min-h-[60px]">
             VIEW DOCUMENTATION
           </button>
         </div>
