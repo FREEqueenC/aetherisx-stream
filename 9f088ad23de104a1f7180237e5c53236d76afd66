@@ -1,0 +1,23 @@
+src/app/layout.tsx
+  8c4edd23b84247f6 4,38-50,55-59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.0",
+  "base_commit_sha": "9f088ad23de104a1f7180237e5c53236d76afd66",
+  "prompts": {
+    "8c4edd23b84247f6": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "b27ec819-0a50-4461-aa01-caa8e00ed3c2",
+        "model": "gemini-3-flash-preview"
+      },
+      "human_author": "Ashleigh Walker",
+      "messages": [],
+      "total_additions": 19,
+      "total_deletions": 4,
+      "accepted_lines": 19,
+      "overriden_lines": 0
+    }
+  }
+}
