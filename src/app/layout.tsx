@@ -65,9 +65,11 @@ export default function RootLayout({
                 <button className="hidden sm:inline-flex text-xs font-mono text-primary/60 hover:text-primary transition-colors">
                   [RESONANCE: 528Hz]
                 </button>
-                <button className="px-4 py-1.5 bg-primary text-background text-sm font-semibold rounded-full hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
-                  Verify Identity
-                </button>
+                <Link href="/verify">
+                  <button className="px-4 py-1.5 bg-primary text-background text-sm font-semibold rounded-full hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+                    Verify Identity
+                  </button>
+                </Link>
               </div>
             </div>
           </header>

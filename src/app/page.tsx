@@ -66,9 +66,11 @@ export default function HomePage() {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
-          <button className="w-full sm:w-auto px-10 py-4 bg-primary text-background font-bold rounded-xl hover:scale-105 transition-all shadow-xl shadow-primary/25">
-            INITIATE CLEARANCE
-          </button>
+          <Link href="/verify" className="w-full sm:w-auto">
+            <button className="w-full px-10 py-4 bg-primary text-background font-bold rounded-xl hover:scale-105 transition-all shadow-xl shadow-primary/25">
+              INITIATE CLEARANCE
+            </button>
+          </Link>
           <button className="w-full sm:w-auto px-10 py-4 border border-primary/40 text-primary font-bold rounded-xl hover:bg-primary/10 transition-all">
             VIEW DOCUMENTATION
           </button>
