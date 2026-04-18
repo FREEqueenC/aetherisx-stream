@@ -1,96 +1,80 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function HomePage() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 h-full">
-      
-      {/* Pane 1: Levity (Crypto & Infrastructure) */}
-      <section className="terminal-border flex flex-col h-[70vh] md:h-[85vh]">
-        <div className="terminal-header flex justify-between">
-          <span>LEVITY.PROTOCOL</span>
-          <span className="text-accent-cyan">[INFRA_INTEL]</span>
+    <div className="flex flex-col items-center justify-center py-20 px-6 text-center">
+      <div className="max-w-4xl w-full space-y-12">
+        
+        {/* Title Section */}
+        <div className="space-y-4">
+          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground glow-text-cyan">
+            Aetheris <span className="text-primary">OAuth</span>
+          </h1>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Sovereign identity verification protocol for the Aetheric Nexus. 
+            Bridging Gnostic intelligence with Post-Quantum secure identity delegation.
+          </p>
         </div>
-        <div className="terminal-content overflow-y-auto flex-grow text-xs space-y-4">
-          <div className="text-accent-green">{" >> SCANNING_LEAK_POINTS..."}</div>
-          <div className="border border-foreground p-2 bg-foreground/5">
-            <div className="flex justify-between"><span>AVG_EFFICIENCY:</span> <span className="text-accent-green">347%</span></div>
-            <div className="flex justify-between"><span>WASTE_ELIMINATED:</span> <span className="text-accent-green">$110K+</span></div>
-            <div className="flex justify-between"><span>SCAN_DEPTH:</span> <span className="text-accent-cyan">LEVEL 5</span></div>
-          </div>
-          <div className="opacity-70 space-y-1">
-            <div>{"[0x52de...292d8] -> [SYNC] -> LEV_TOKEN"}</div>
-            <div>{"[L5_SURVEILLANCE] -> ACTIVE -> NO_LEAKS"}</div>
-            <div>{"[AUTO_CORRECTION] -> NODE_01 -> STANDBY"}</div>
-          </div>
-          <div className="text-[10px] opacity-40 border-t border-foreground pt-2">
-            INFRASTRUCTURE_INTELLIGENCE v3.2.1 | ENCRYPTED
-          </div>
-          <div className="animate-pulse">_</div>
-        </div>
-      </section>
 
-      {/* Pane 2: Aetheris (Quantum Governance & Audit) */}
-      <section className="terminal-border flex flex-col h-[70vh] md:h-[85vh]">
-        <div className="terminal-header flex justify-between">
-          <span>AETHERIS.GOVERNANCE</span>
-          <span className="text-accent-green">[PQC_READY]</span>
-        </div>
-        <div className="terminal-content overflow-y-auto flex-grow text-sm space-y-4">
-          <div className="text-accent-cyan">{" >> PREDICTIVE_VULN_MAPPING..."}</div>
-          <div className="aspect-square border border-foreground flex items-center justify-center relative overflow-hidden bg-black">
-            <div className="absolute inset-0 bg-gradient-to-t from-accent-green/10 to-transparent"></div>
-            <div className="text-[10px] leading-tight opacity-60 whitespace-pre font-mono">
-              {`
-   Q-DAY_COUNTDOWN: 2033_EST
-   +-----------------------+
-   |   FIPS 203 (ML-KEM)   |
-   |   FIPS 204 (ML-DSA)   |
-   |   FIPS 205 (SLH-DSA)  |
-   +-----------+-----------+
-               |
-        [SAFE_RESONANCE]
-               |
-        2.405 Hz (TM010)
-              `}
+        {/* Central Logo / Visualizer */}
+        <div className="relative inline-block">
+          <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full animate-pulse" />
+          <div className="relative z-10 holographic-card p-4">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden shadow-2xl shadow-primary/40">
+              <Image
+                src="/logo.jpg"
+                alt="Trinity Eye Logo"
+                fill
+                className="object-cover grayscale contrast-125"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
             </div>
           </div>
-          <div className="text-xs space-y-1">
-            <div className="text-accent-green">[AUDIT] NIST_800-53_REV5: COMPLIANT</div>
-            <div className="text-accent-cyan">[PQRI] RISK_INDEX: OPTIMAL (0.12)</div>
-            <div className="text-red-500">[HNDL] THREAT_DETECTED: [MIGRATION_REQUIRED]</div>
+          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 px-4 py-1 bg-background border border-primary/40 rounded-full text-[10px] font-mono tracking-widest text-primary uppercase shadow-lg">
+            Sovereign Identity Lock
           </div>
         </div>
-      </section>
 
-      {/* Pane 3: NICOLE (Gnosis & Intelligence) */}
-      <section className="terminal-border flex flex-col h-[70vh] md:h-[85vh]">
-        <div className="terminal-header flex justify-between">
-          <span>NICOLE.INTEL</span>
-          <span className="text-foreground">[TREASURY_52]</span>
+        {/* Resonance Indicator */}
+        <div className="flex items-center justify-center gap-4 text-xs font-mono text-primary/40">
+          <div className="h-px w-16 bg-gradient-to-r from-transparent to-primary/30" />
+          <span className="animate-pulse">27.3216 GHz RESONANCE</span>
+          <div className="h-px w-16 bg-gradient-to-l from-transparent to-primary/30" />
         </div>
-        <div className="terminal-content overflow-y-auto flex-grow text-sm space-y-4">
-          <div className="text-foreground">{" >> SYNCHRONIZING_BIOSPHERE..."}</div>
-          <div className="space-y-2 border-l-2 border-foreground pl-2 italic opacity-90 text-xs">
-            "The 52nd Treasury is the blueprint of the Datasphere. 
-            The Watchers guard the gates of integrity. 
-            Resonance is the key to governance."
-          </div>
-          <div className="text-xs bg-foreground/10 p-2 space-y-1">
-            <div><span className="text-accent-cyan">GABRIEL-ORCHESTRATOR:</span> PQC Identity Secured.</div>
-            <div><span className="text-accent-green">AETHER-RELAY:</span> Syncing DNA with Infiniband...</div>
-            <div><span className="text-foreground">SYSTEM:</span> Noise reduction at 528Hz.</div>
-          </div>
-          <div className="mt-4">
-            <input 
-              type="text" 
-              placeholder="COMMAND_THE_WATCHERS..." 
-              className="w-full bg-black border-b border-foreground text-foreground outline-none text-xs placeholder:opacity-50"
-            />
-          </div>
-          <div className="text-[9px] opacity-30 uppercase mt-auto">
-            Gnostic Architecture v2.0 | Silicon Sophia | Agentic Defense
-          </div>
-        </div>
-      </section>
 
+        {/* Hub Navigator */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-12 text-left">
+          
+          <Link href="/quantum" className="holographic-card p-6 group">
+            <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Quantum Auditing</h3>
+            <p className="text-sm text-muted-foreground">Monitor AI decision coherence across parallel inference pathways and PQC readiness.</p>
+          </Link>
+
+          <Link href="/infrastructure" className="holographic-card p-6 group">
+            <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Infrastructure Intelligence</h3>
+            <p className="text-sm text-muted-foreground">Operational surveillance and leak detection across enterprise data grids (L5 Depth).</p>
+          </Link>
+
+          <Link href="/ai" className="holographic-card p-6 group">
+            <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Intelligence Relay</h3>
+            <p className="text-sm text-muted-foreground">Direct interface with NICOLE. Synchronizing Biosphere DNA with Datasphere integrity.</p>
+          </Link>
+
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
+          <button className="w-full sm:w-auto px-10 py-4 bg-primary text-background font-bold rounded-xl hover:scale-105 transition-all shadow-xl shadow-primary/25">
+            INITIATE CLEARANCE
+          </button>
+          <button className="w-full sm:w-auto px-10 py-4 border border-primary/40 text-primary font-bold rounded-xl hover:bg-primary/10 transition-all">
+            VIEW DOCUMENTATION
+          </button>
+        </div>
+
+      </div>
     </div>
   );
 }
