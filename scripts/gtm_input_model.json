@@ -1,0 +1,24 @@
+{
+  "revenue": {
+    "current_arr": 133320,
+    "prior_arr": 0,
+    "net_new_arr": 133320,
+    "arpa_monthly": 11.11,
+    "revenue_growth_pct": 100
+  },
+  "costs": {
+    "sales_marketing_spend": 20000,
+    "cac": 20,
+    "gross_margin_pct": 85,
+    "total_operating_expense": 50000,
+    "net_burn": 10000,
+    "fcf_margin_pct": 20
+  },
+  "customers": {
+    "beginning_arr": 0,
+    "expansion_arr": 0,
+    "contraction_arr": 0,
+    "churned_arr": 0,
+    "annual_churn_rate_pct": 0
+  }
+}
