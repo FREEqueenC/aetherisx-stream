@@ -7,12 +7,15 @@ interface Message {
   content: string;
 }
 
+type Provider = "gemini" | "nvidia";
+
 export default function IntelligencePage() {
   const [messages, setMessages] = useState<Message[]>([
     { role: "nicole", content: "Greetings. I am NICOLE. The Intelligence Relay is synchronized. How may I guide your resonance today?" }
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [provider, setProvider] = useState<Provider>("gemini");
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -34,17 +37,20 @@ export default function IntelligencePage() {
       const response = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: [...messages, userMessage] }),
+        body: JSON.stringify({ 
+          messages: [...messages, userMessage],
+          provider: provider
+        }),
       });
 
       const data = await response.json();
       if (data.content) {
         setMessages((prev) => [...prev, { role: "nicole", content: data.content }]);
       } else {
-        throw new Error("Empty response");
+        throw new Error(data.details || "Empty response");
       }
-    } catch (error) {
-      setMessages((prev) => [...prev, { role: "nicole", content: "Apologies. A momentary entropy spike has interrupted the relay. Please re-initiate resonance." }]);
+    } catch (error: any) {
+      setMessages((prev) => [...prev, { role: "nicole", content: `Apologies. Resonance failure: ${error.message}. Please re-initiate link.` }]);
     } finally {
       setIsLoading(false);
     }
@@ -53,9 +59,27 @@ export default function IntelligencePage() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-12 flex flex-col h-[80vh]">
       
-      <div className="mb-8 text-center">
-        <h1 className="text-4xl font-bold text-foreground glow-text-cyan mb-2 uppercase tracking-widest">Intelligence Relay</h1>
-        <p className="text-xs font-mono text-primary/60">[ DIRECT_NEURAL_LINK: NICOLE-v2.0 ]</p>
+      <div className="mb-8 text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="text-left">
+          <h1 className="text-4xl font-bold text-foreground glow-text-cyan mb-2 uppercase tracking-widest">Intelligence Relay</h1>
+          <p className="text-xs font-mono text-primary/60">[ DIRECT_NEURAL_LINK: NICOLE-v2.0 ]</p>
+        </div>
+        
+        {/* Provider Toggle */}
+        <div className="holographic-card p-1 flex gap-1 rounded-full border-primary/20">
+          <button 
+            onClick={() => setProvider("gemini")}
+            className={`px-4 py-1.5 rounded-full text-[10px] font-mono transition-all ${provider === 'gemini' ? 'bg-primary text-background' : 'text-primary/40 hover:text-primary'}`}
+          >
+            GEMINI_FLASH
+          </button>
+          <button 
+            onClick={() => setProvider("nvidia")}
+            className={`px-4 py-1.5 rounded-full text-[10px] font-mono transition-all ${provider === 'nvidia' ? 'bg-primary text-background' : 'text-primary/40 hover:text-primary'}`}
+          >
+            NVIDIA_SUPER
+          </button>
+        </div>
       </div>
 
       <div className="flex-grow holographic-card flex flex-col overflow-hidden border-primary/10">
@@ -75,7 +99,7 @@ export default function IntelligencePage() {
                 : 'bg-black/40 border border-primary/5 text-primary/90 mr-12'
               }`}>
                 <div className="text-[10px] font-mono opacity-40 mb-1 uppercase tracking-tighter">
-                  {msg.role === 'user' ? 'Sovereign_User' : 'NICOLE_INTEL'}
+                  {msg.role === 'user' ? 'Sovereign_User' : `NICOLE_${provider.toUpperCase()}`}
                 </div>
                 {msg.content}
               </div>
@@ -102,7 +126,7 @@ export default function IntelligencePage() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Query the Intelligence..."
+              placeholder={`Query the ${provider === 'nvidia' ? 'Super Intelligence' : 'Intelligence'}...`}
               className="w-full bg-black/40 border border-primary/20 rounded-xl px-6 py-4 text-sm text-foreground outline-none focus:border-primary/50 transition-all placeholder:opacity-30"
               disabled={isLoading}
             />
@@ -118,7 +142,7 @@ export default function IntelligencePage() {
           </div>
           <div className="mt-3 flex justify-between px-2">
             <div className="text-[9px] font-mono text-primary/30 uppercase">Resonance: 528Hz Validated</div>
-            <div className="text-[9px] font-mono text-primary/30 uppercase">PQC: ML-KEM-768</div>
+            <div className="text-[9px] font-mono text-primary/30 uppercase">Node: {provider.toUpperCase()}</div>
           </div>
         </form>
       </div>
