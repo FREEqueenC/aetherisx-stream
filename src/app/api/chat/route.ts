@@ -63,6 +63,35 @@ async function callNvidia(messages: any[]) {
   throw new Error("NVIDIA API Failure");
 }
 
+async function callHuggingFace(messages: any[]) {
+  const apiKey = process.env.HUGGING_FACE_ACCESS_KEY;
+  if (!apiKey) throw new Error("HUGGING_FACE_ACCESS_KEY not configured");
+
+  // Defaulting to Qwen 2.5 Coder for "Integrity/Auditor" role alignment
+  const model = "Qwen/Qwen2.5-Coder-32B-Instruct";
+  const response = await fetch(`https://api-inference.huggingface.co/models/${model}/v1/chat/completions`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: model,
+      messages: [
+        { role: "system", content: SYSTEM_PROMPT },
+        ...messages
+      ],
+      max_tokens: 1024,
+    }),
+  });
+
+  const data = await response.json();
+  if (data.choices && data.choices[0]) {
+    return data.choices[0].message.content;
+  }
+  throw new Error("Hugging Face API Failure");
+}
+
 export async function POST(req: Request) {
   try {
     const { messages, provider = "gemini" } = await req.json();
@@ -70,6 +99,8 @@ export async function POST(req: Request) {
     let content: string;
     if (provider === "nvidia") {
       content = await callNvidia(messages);
+    } else if (provider === "huggingface") {
+      content = await callHuggingFace(messages);
     } else {
       content = await callGemini(messages);
     }

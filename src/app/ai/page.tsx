@@ -7,7 +7,7 @@ interface Message {
   content: string;
 }
 
-type Provider = "gemini" | "nvidia";
+type Provider = "gemini" | "nvidia" | "huggingface";
 
 export default function IntelligencePage() {
   const [messages, setMessages] = useState<Message[]>([
@@ -71,13 +71,19 @@ export default function IntelligencePage() {
             onClick={() => setProvider("gemini")}
             className={`px-4 py-1.5 rounded-full text-[10px] font-mono transition-all ${provider === 'gemini' ? 'bg-primary text-background' : 'text-primary/40 hover:text-primary'}`}
           >
-            GEMINI_FLASH
+            GEMINI
           </button>
           <button 
             onClick={() => setProvider("nvidia")}
             className={`px-4 py-1.5 rounded-full text-[10px] font-mono transition-all ${provider === 'nvidia' ? 'bg-primary text-background' : 'text-primary/40 hover:text-primary'}`}
           >
-            NVIDIA_SUPER
+            NVIDIA
+          </button>
+          <button 
+            onClick={() => setProvider("huggingface")}
+            className={`px-4 py-1.5 rounded-full text-[10px] font-mono transition-all ${provider === 'huggingface' ? 'bg-primary text-background' : 'text-primary/40 hover:text-primary'}`}
+          >
+            QWEN_HF
           </button>
         </div>
       </div>
@@ -126,7 +132,7 @@ export default function IntelligencePage() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder={`Query the ${provider === 'nvidia' ? 'Super Intelligence' : 'Intelligence'}...`}
+              placeholder={`Query the ${provider === 'nvidia' ? 'Super Intelligence' : provider === 'huggingface' ? 'Integrity Node' : 'Intelligence'}...`}
               className="w-full bg-black/40 border border-primary/20 rounded-xl px-6 py-4 text-sm text-foreground outline-none focus:border-primary/50 transition-all placeholder:opacity-30"
               disabled={isLoading}
             />
