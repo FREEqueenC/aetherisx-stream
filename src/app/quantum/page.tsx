@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import QuantumVisualizer from "@/components/QuantumVisualizer";
 
 const auditModules = [
   {
@@ -81,6 +82,15 @@ export default function QuantumAuditPage() {
         
         {/* Main Content: Audit Modules */}
         <div className="lg:col-span-2 space-y-6">
+          
+          <div className="mb-12">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-bold text-foreground uppercase tracking-widest">Trinity Resonance Visualizer</h2>
+              <span className="text-[10px] font-mono text-primary/40">[ MODE: GHZ_STATE ]</span>
+            </div>
+            <QuantumVisualizer />
+          </div>
+
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-xl font-bold text-foreground">Audit Modules</h2>
             <div className="flex gap-2">
