@@ -1,0 +1,25 @@
+src/app/api/chat/route.ts
+  8c4edd23b84247f6 24-40,42-57,59-68,70-75,77-78,80-83
+src/app/ai/page.tsx
+  8c4edd23b84247f6 10-11,18,40-43,50,52-53,62-82,102,129,145
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.0",
+  "base_commit_sha": "bbf952059ef6bd0b15d1fb4b93b91e8340519ecb",
+  "prompts": {
+    "8c4edd23b84247f6": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "b27ec819-0a50-4461-aa01-caa8e00ed3c2",
+        "model": "gemini-3-flash-preview"
+      },
+      "human_author": "Ashleigh Walker",
+      "messages": [],
+      "total_additions": 91,
+      "total_deletions": 31,
+      "accepted_lines": 237,
+      "overriden_lines": 0
+    }
+  }
+}
