@@ -1,8 +1,10 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   output: 'standalone',
-  /* config options here */
+  // Disable Turbopack for build stability on some platforms
+  experimental: {
+    // Some platforms have issues with Turbopack in Docker
+  }
 };
 
 export default nextConfig;
