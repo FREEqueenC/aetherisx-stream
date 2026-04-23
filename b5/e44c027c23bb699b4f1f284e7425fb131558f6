@@ -1,0 +1,27 @@
+src/app/layout.tsx
+  6651af2d5efaa3fb 21
+src/components/Navbar.tsx
+  6651af2d5efaa3fb 25
+src/app/page.tsx
+  6651af2d5efaa3fb 29
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "b5e44c027c23bb699b4f1f284e7425fb131558f6",
+  "prompts": {
+    "6651af2d5efaa3fb": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "486f726c-517b-4d3a-ba01-437998092e17",
+        "model": "gemini-3-flash-preview"
+      },
+      "human_author": "Ashleigh Walker",
+      "messages": [],
+      "total_additions": 3,
+      "total_deletions": 3,
+      "accepted_lines": 251,
+      "overriden_lines": 0
+    }
+  }
+}
