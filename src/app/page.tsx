@@ -78,13 +78,20 @@ export default function Home() {
         )}
 
         {/* Footer Telemetry */}
-        <div className="mt-24 mb-12 flex items-center justify-center gap-12 font-mono text-[9px] text-primary/30 uppercase tracking-[0.4em]">
-          <div className="flex items-center gap-2">
-            <span className="w-1 h-1 bg-primary rounded-full animate-ping" />
-            27.32 GHz Active
+        <div className="mt-24 mb-12 flex flex-col items-center gap-6">
+          <div className="flex items-center justify-center gap-12 font-mono text-[9px] text-primary/30 uppercase tracking-[0.4em]">
+            <div className="flex items-center gap-2">
+              <span className="w-1 h-1 bg-primary rounded-full animate-ping" />
+              27.32 GHz Active
+            </div>
+            <div>528 Hz Verified</div>
+            <div>PQC Secure Link</div>
           </div>
-          <div>528 Hz Verified</div>
-          <div>PQC Secure Link</div>
+          
+          <div className="flex items-center gap-8 font-mono text-[8px] text-primary/20 uppercase tracking-widest">
+            <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-primary transition-colors">Terms of Resonance</Link>
+          </div>
         </div>
       </div>
 
