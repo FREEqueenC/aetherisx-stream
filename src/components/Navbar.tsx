@@ -22,7 +22,7 @@ export default function Navbar() {
       <div className="holographic-card px-6 py-3 flex items-center justify-between border-primary/20 backdrop-blur-xl">
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-primary/30 group-hover:border-primary transition-colors">
-            <Image src="/logo.jpg" alt="Logo" fill className="object-cover" />
+            <Image src="/logo-variation.jpg" alt="Logo" fill className="object-cover" />
           </div>
           <span className="text-[10px] font-mono text-primary uppercase tracking-[0.3em] hidden sm:block">Aetheris_Hub</span>
         </Link>

@@ -26,7 +26,7 @@ export default function Home() {
         <div className="mb-8 flex justify-center">
           <div className="relative w-32 h-32 rounded-2xl overflow-hidden border-2 border-primary/20 shadow-[0_0_50px_rgba(34,211,238,0.2)]">
             <Image 
-              src="/logo.jpg" 
+              src="/logo-variation.jpg" 
               alt="Aetheris Logo" 
               fill 
               className="object-cover"
