@@ -1,0 +1,29 @@
+src/app/layout.tsx
+  6651af2d5efaa3fb 5,34-35
+src/app/ai/page.tsx
+  6651af2d5efaa3fb 6,72-99,102-122,125-132,134,137-159,161-163,165-180,182-204,210
+src/components/SovereignGate.tsx
+  6651af2d5efaa3fb 1-66
+src/components/Navbar.tsx
+  6651af2d5efaa3fb 1-53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "d823f27ec4b5ca00c74572969f8a0dea0bb8ef83",
+  "prompts": {
+    "6651af2d5efaa3fb": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "486f726c-517b-4d3a-ba01-437998092e17",
+        "model": "gemini-3-flash-preview"
+      },
+      "human_author": "Ashleigh Walker",
+      "messages": [],
+      "total_additions": 247,
+      "total_deletions": 125,
+      "accepted_lines": 531,
+      "overriden_lines": 0
+    }
+  }
+}
