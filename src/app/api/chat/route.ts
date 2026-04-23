@@ -22,9 +22,8 @@ CONTEXT:
 `;
 
 async function callGemini(messages: any[]) {
-  const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
-  if (!apiKey) throw new Error("GOOGLE_GENERATIVE_AI_API_KEY not configured");
-
+  const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY || "BUILD_TIME_PLACEHOLDER";
+  
   const genAI = new GoogleGenerativeAI(apiKey);
   // Using gemini-3-flash-preview for peak gnostic resonance
   const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });

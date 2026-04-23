@@ -1,10 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next";
+import path from "path";
+
+const nextConfig: NextConfig = {
   output: 'standalone',
-  // Disable Turbopack for build stability on some platforms
+  // Explicitly set the root directory to fix the "multiple lockfiles" path issue
   experimental: {
-    // Some platforms have issues with Turbopack in Docker
-  }
+    outputFileTracingRoot: path.join(__dirname),
+  },
 };
 
 export default nextConfig;
