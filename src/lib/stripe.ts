@@ -1,10 +1,8 @@
 import Stripe from "stripe";
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error("STRIPE_SECRET_KEY is not defined");
-}
+const secretKey = process.env.STRIPE_SECRET_KEY || "";
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: "2025-12-18.acacia" as any, // Using the latest standard version
+export const stripe = new Stripe(secretKey, {
+  apiVersion: "2025-12-18.acacia" as any, 
   typescript: true,
 });
