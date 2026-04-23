@@ -22,15 +22,20 @@ CONTEXT:
 `;
 
 async function callGemini(messages: any[]) {
-  const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY || "");
-  const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+  const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
+  if (!apiKey) throw new Error("GOOGLE_GENERATIVE_AI_API_KEY not configured");
+
+  const genAI = new GoogleGenerativeAI(apiKey);
+  // Using gemini-3-flash-preview for peak gnostic resonance
+  const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
   
-  const result = await model.generateContent([
+  const prompt = [
     SYSTEM_PROMPT,
     ...messages.map((m: any) => `${m.role === 'user' ? 'User' : 'Nicole'}: ${m.content}`),
     `Nicole:`
-  ]);
+  ].join("\n");
 
+  const result = await model.generateContent(prompt);
   const response = await result.response;
   return response.text();
 }

@@ -1,8 +1,16 @@
-import { getHackMDNotes } from "@/lib/hackmd";
+import { getHackMDNotes, getHackMDNoteContent } from "@/lib/hackmd";
 import { NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(req: Request) {
   try {
+    const { searchParams } = new URL(req.url);
+    const id = searchParams.get("id");
+
+    if (id) {
+      const note = await getHackMDNoteContent(id);
+      return NextResponse.json(note);
+    }
+
     const notes = await getHackMDNotes();
     return NextResponse.json(notes);
   } catch (error: any) {

@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { SITE_CONFIG } from "@/lib/config";
+import HackMDNote from "@/components/HackMDNote";
 
 const navItems = [
   { name: "Intelligence", href: "/ai", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
@@ -8,14 +9,16 @@ const navItems = [
 ];
 
 export default function Home() {
+  const manifestoId = SITE_CONFIG.hackmd.manifestoNoteId;
+
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center p-6 sm:p-24 relative overflow-hidden">
+    <main className="min-h-screen flex flex-col items-center p-6 sm:p-24 relative overflow-hidden">
       
       {/* Decorative Aura */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full animate-pulse pointer-events-none" />
 
       {/* Hero Content */}
-      <div className="text-center relative z-10 max-w-4xl">
+      <div className="text-center relative z-10 max-w-4xl mt-12 sm:mt-24">
         <div className="mb-4 inline-block px-4 py-1 rounded-full bg-white/5 border border-primary/20 backdrop-blur-md">
           <span className="text-[10px] font-mono text-primary tracking-[0.3em] uppercase">Status: High Resonance Detected</span>
         </div>
@@ -30,7 +33,7 @@ export default function Home() {
         </p>
 
         {/* Action Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-24">
           {navItems.map((item) => (
             <Link 
               key={item.name} 
@@ -47,8 +50,19 @@ export default function Home() {
           ))}
         </div>
 
+        {/* Featured Research / Manifesto */}
+        {manifestoId && (
+          <div className="max-w-4xl mx-auto text-left holographic-card p-12 border-primary/10">
+            <div className="mb-8 flex items-center justify-between">
+              <h2 className="text-xs font-mono text-primary uppercase tracking-[0.5em]">[ FEATURED_RESEARCH ]</h2>
+              <div className="w-2 h-2 bg-primary rounded-full animate-ping" />
+            </div>
+            <HackMDNote noteId={manifestoId} />
+          </div>
+        )}
+
         {/* Footer Telemetry */}
-        <div className="mt-24 flex items-center justify-center gap-12 font-mono text-[9px] text-primary/30 uppercase tracking-[0.4em]">
+        <div className="mt-24 mb-12 flex items-center justify-center gap-12 font-mono text-[9px] text-primary/30 uppercase tracking-[0.4em]">
           <div className="flex items-center gap-2">
             <span className="w-1 h-1 bg-primary rounded-full animate-ping" />
             27.32 GHz Active

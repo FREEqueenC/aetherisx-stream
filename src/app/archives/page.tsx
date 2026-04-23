@@ -1,6 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
+import HackMDNote from "@/components/HackMDNote";
 
 interface Note {
   id: string;
@@ -9,7 +11,9 @@ interface Note {
   updatedAt: number;
 }
 
-export default function ArchivesPage() {
+function ArchivesContent() {
+  const searchParams = useSearchParams();
+  const selectedNoteId = searchParams.get("id");
   const [notes, setNotes] = useState<Note[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -33,11 +37,30 @@ export default function ArchivesPage() {
   return (
     <div className="max-w-7xl mx-auto px-6 py-24">
       <div className="mb-16">
-        <h1 className="text-5xl font-bold text-foreground mb-4 uppercase tracking-tighter glow-text-cyan">Sovereign Archives</h1>
-        <p className="text-muted-foreground font-mono uppercase text-[10px] tracking-[0.5em]">Living Documents of the 52nd Treasury</p>
+        <h1 className="text-5xl font-bold text-foreground mb-4 uppercase tracking-tighter glow-text-cyan">
+          {selectedNoteId ? "Document View" : "Sovereign Archives"}
+        </h1>
+        <p className="text-muted-foreground font-mono uppercase text-[10px] tracking-[0.5em]">
+          {selectedNoteId ? `Node: ${selectedNoteId}` : "Living Documents of the 52nd Treasury"}
+        </p>
       </div>
 
-      {isLoading ? (
+      {selectedNoteId ? (
+        <div className="holographic-card p-12 max-w-4xl mx-auto">
+          <HackMDNote noteId={selectedNoteId} />
+          <div className="mt-12 pt-8 border-t border-primary/10">
+            <button 
+              onClick={() => window.history.back()}
+              className="text-[10px] font-mono text-primary/40 hover:text-primary uppercase tracking-widest flex items-center gap-2"
+            >
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+              Return to Archives
+            </button>
+          </div>
+        </div>
+      ) : isLoading ? (
         <div className="grid lg:grid-cols-3 gap-8">
           {[1, 2, 3].map(i => (
             <div key={i} className="holographic-card p-8 h-48 animate-pulse border-primary/10" />
@@ -87,5 +110,13 @@ export default function ArchivesPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ArchivesPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-background" />}>
+      <ArchivesContent />
+    </Suspense>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { SITE_CONFIG } from "@/lib/config";
 import { createCheckoutSession } from "@/app/actions/stripe";
 
 const plans = [
@@ -19,7 +20,7 @@ const plans = [
     description: "Harmonize with the Multi-Agent Intelligence Grid.",
     features: ["Triple-Node Access", "Quantum Visualizer", "L5 Surveillance", "Governance Proposals"],
     cta: "Upgrade Resonance",
-    priceId: "price_orchestrator_placeholder",
+    priceId: SITE_CONFIG.stripe.orchestratorPriceId,
     glow: "cyan",
   },
   {
@@ -29,7 +30,7 @@ const plans = [
     description: "Transcendent stewardship of the Aetheric Trinity.",
     features: ["Priority Neural Link", "PQC Sovereign Identity", "52nd Treasury Access", "LEV Token Utility"],
     cta: "Ascend Now",
-    priceId: "price_sovereign_placeholder",
+    priceId: SITE_CONFIG.stripe.sovereignPriceId,
     glow: "purple",
   }
 ];
