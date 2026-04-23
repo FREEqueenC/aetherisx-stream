@@ -3,6 +3,7 @@
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import HackMDNote from "@/components/HackMDNote";
+import Image from "next/image";
 
 interface Note {
   id: string;
@@ -10,6 +11,19 @@ interface Note {
   publishLink: string;
   updatedAt: number;
 }
+
+const RESEARCH_IMAGES = [
+  "/research/luminous-mainframe.png",
+  "/research/matter-diagnostic.png",
+  "/research/angels-ai-concept.png",
+  "/research/intelligence-hierarchy.png",
+  "/research/light-stream.png",
+  "/research/sound-matter.png",
+  "/research/brain-vacuum.png",
+  "/research/healing-resonance.png",
+  "/research/api-diagnostics.png",
+  "/research/api-security.png"
+];
 
 function ArchivesContent() {
   const searchParams = useSearchParams();
@@ -36,28 +50,55 @@ function ArchivesContent() {
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-24">
-      <div className="mb-16">
-        <h1 className="text-5xl font-bold text-foreground mb-4 uppercase tracking-tighter glow-text-cyan">
-          {selectedNoteId ? "Document View" : "Sovereign Archives"}
-        </h1>
-        <p className="text-muted-foreground font-mono uppercase text-[10px] tracking-[0.5em]">
-          {selectedNoteId ? `Node: ${selectedNoteId}` : "Living Documents of the 52nd Treasury"}
-        </p>
+      <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <div>
+          <h1 className="text-5xl font-bold text-foreground mb-4 uppercase tracking-tighter glow-text-cyan">
+            {selectedNoteId ? "Document View" : "Sovereign Archives"}
+          </h1>
+          <p className="text-muted-foreground font-mono uppercase text-[10px] tracking-[0.5em]">
+            {selectedNoteId ? `Node: ${selectedNoteId}` : "Living Documents of the 52nd Treasury"}
+          </p>
+        </div>
+
+        {!selectedNoteId && (
+          <div className="flex gap-2">
+            {RESEARCH_IMAGES.slice(0, 5).map((img, i) => (
+              <div key={i} className="w-12 h-12 rounded-lg border border-primary/20 overflow-hidden relative">
+                <Image src={img} alt="Research Preview" fill className="object-cover opacity-60 hover:opacity-100 transition-opacity" />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {selectedNoteId ? (
-        <div className="holographic-card p-12 max-w-4xl mx-auto">
-          <HackMDNote noteId={selectedNoteId} />
-          <div className="mt-12 pt-8 border-t border-primary/10">
-            <button 
-              onClick={() => window.history.back()}
-              className="text-[10px] font-mono text-primary/40 hover:text-primary uppercase tracking-widest flex items-center gap-2"
-            >
-              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-              Return to Archives
-            </button>
+        <div className="grid lg:grid-cols-4 gap-12">
+          <div className="lg:col-span-3">
+            <div className="holographic-card p-12">
+              <HackMDNote noteId={selectedNoteId} />
+              <div className="mt-12 pt-8 border-t border-primary/10">
+                <button 
+                  onClick={() => window.history.back()}
+                  className="text-[10px] font-mono text-primary/40 hover:text-primary uppercase tracking-widest flex items-center gap-2"
+                >
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                  </svg>
+                  Return to Archives
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div className="space-y-6">
+            <h2 className="text-[10px] font-mono text-primary uppercase tracking-[0.3em]">Related_Visuals</h2>
+            <div className="grid grid-cols-2 gap-4">
+              {RESEARCH_IMAGES.map((img, i) => (
+                <div key={i} className="relative aspect-square rounded-xl border border-primary/10 overflow-hidden group">
+                  <Image src={img} alt="Research Visual" fill className="object-cover opacity-40 group-hover:opacity-100 transition-opacity" />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       ) : isLoading ? (
@@ -72,9 +113,7 @@ function ArchivesContent() {
             notes.map((note) => (
               <a 
                 key={note.id} 
-                href={note.publishLink} 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href={`/archives?id=${note.id}`} 
                 className="holographic-card p-8 group hover:border-primary/40 transition-all block"
               >
                 <div className="flex justify-between items-start mb-6">
@@ -92,7 +131,7 @@ function ArchivesContent() {
                 </h2>
                 <div className="mt-4 flex items-center gap-2 text-[9px] font-mono text-primary/40 uppercase tracking-widest">
                   <span className="w-1 h-1 bg-primary rounded-full animate-ping" />
-                  Link Active
+                  Node Link Verified
                 </div>
               </a>
             ))

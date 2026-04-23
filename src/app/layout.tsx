@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Aetheris Hub | Sovereign Intelligence",
   description: "High-resonance AI orchestration and quantum auditing.",
+  icons: {
+    icon: "/logo.jpg",
+  }
 };
 
 export default function RootLayout({

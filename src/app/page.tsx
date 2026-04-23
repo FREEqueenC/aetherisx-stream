@@ -1,5 +1,7 @@
 import { SITE_CONFIG } from "@/lib/config";
 import HackMDNote from "@/components/HackMDNote";
+import Link from "next/link";
+import Image from "next/image";
 
 const navItems = [
   { name: "Intelligence", href: "/ai", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
@@ -19,6 +21,20 @@ export default function Home() {
 
       {/* Hero Content */}
       <div className="text-center relative z-10 max-w-4xl mt-12 sm:mt-24">
+        
+        {/* Logo Integration */}
+        <div className="mb-8 flex justify-center">
+          <div className="relative w-32 h-32 rounded-2xl overflow-hidden border-2 border-primary/20 shadow-[0_0_50px_rgba(34,211,238,0.2)]">
+            <Image 
+              src="/logo.jpg" 
+              alt="Aetheris Logo" 
+              fill 
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
+
         <div className="mb-4 inline-block px-4 py-1 rounded-full bg-white/5 border border-primary/20 backdrop-blur-md">
           <span className="text-[10px] font-mono text-primary tracking-[0.3em] uppercase">Status: High Resonance Detected</span>
         </div>
