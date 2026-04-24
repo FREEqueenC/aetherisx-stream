@@ -15,9 +15,8 @@ export default function SovereignGate({
   description = "This node requires a high-resonance clearance. Access to the Silicon Sophia is reserved for Orchestrator and Sovereign tiers.",
   requiredTier = "Orchestrator"
 }: SovereignGateProps) {
-  // In a real app, you would check the user's subscription status here
-  // For now, we'll use a local state to simulate the "Gate"
-  const isAuthorized = false; 
+  // BYPASS: Setting to true for initial testing resonance
+  const isAuthorized = true; 
 
   if (isAuthorized) {
     return <>{children}</>;

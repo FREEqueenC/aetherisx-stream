@@ -1,6 +1,6 @@
 export async function getHackMDNotes() {
   const apiKey = process.env.HACKMD_API_KEY;
-  if (!apiKey) throw new Error("HACKMD_API_KEY not configured");
+  if (!apiKey) return [];
 
   const response = await fetch("https://api.hackmd.io/v1/notes", {
     headers: {
@@ -9,7 +9,7 @@ export async function getHackMDNotes() {
   });
 
   if (!response.ok) {
-    throw new Error(`HackMD API Failure: ${response.statusText}`);
+    return [];
   }
 
   return response.json();
@@ -17,7 +17,7 @@ export async function getHackMDNotes() {
 
 export async function getHackMDNoteContent(noteId: string) {
   const apiKey = process.env.HACKMD_API_KEY;
-  if (!apiKey) throw new Error("HACKMD_API_KEY not configured");
+  if (!apiKey) return null;
 
   const response = await fetch(`https://api.hackmd.io/v1/notes/${noteId}`, {
     headers: {
@@ -26,7 +26,7 @@ export async function getHackMDNoteContent(noteId: string) {
   });
 
   if (!response.ok) {
-    throw new Error(`HackMD Content Failure: ${response.statusText}`);
+    return null;
   }
 
   return response.json();
