@@ -1,0 +1,25 @@
+src/lib/hackmd.ts
+  6651af2d5efaa3fb 3,12,20,29
+src/components/SovereignGate.tsx
+  6651af2d5efaa3fb 18-19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2",
+  "base_commit_sha": "fae648789a99ae9a57cb50a0af03b4eab9ccd4cf",
+  "prompts": {
+    "6651af2d5efaa3fb": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "486f726c-517b-4d3a-ba01-437998092e17",
+        "model": "gemini-3-flash-preview"
+      },
+      "human_author": "Ashleigh Walker",
+      "messages": [],
+      "total_additions": 6,
+      "total_deletions": 7,
+      "accepted_lines": 294,
+      "overriden_lines": 0
+    }
+  }
+}
