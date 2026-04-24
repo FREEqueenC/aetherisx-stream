@@ -56,7 +56,7 @@ function ArchivesContent() {
             {selectedNoteId ? "Document View" : "Sovereign Archives"}
           </h1>
           <p className="text-muted-foreground font-mono uppercase text-[10px] tracking-[0.5em]">
-            {selectedNoteId ? `Node: ${selectedNoteId}` : "Living Documents of the 52nd Treasury"}
+            {selectedNoteId ? `Node: ${selectedNoteId}` : "Living Documents of the Treasury of the Light"}
           </p>
         </div>
 
