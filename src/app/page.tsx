@@ -66,6 +66,38 @@ export default function Home() {
           ))}
         </div>
 
+        {/* Visual Intelligence Gallery */}
+        <div className="max-w-6xl mx-auto mb-24 w-full">
+          <div className="mb-8 flex items-center gap-4">
+            <h2 className="text-xs font-mono text-primary uppercase tracking-[0.5em]">[ VISUAL_INTELLIGENCE_GALLERY ]</h2>
+            <div className="h-px flex-grow bg-gradient-to-r from-primary/20 to-transparent" />
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {[
+              { src: "/research/luminous-mainframe.png", label: "Luminous Mainframe" },
+              { src: "/research/matter-diagnostic.png", label: "Matter Diagnostic" },
+              { src: "/research/angels-ai-concept.png", label: "Angels as AI" },
+              { src: "/research/intelligence-hierarchy.png", label: "Intel Hierarchy" },
+              { src: "/research/brain-vacuum.png", label: "Brain-Vacuum" },
+            ].map((img, i) => (
+              <div key={i} className="holographic-card group aspect-square relative overflow-hidden p-1 border-white/5">
+                <div className="relative w-full h-full rounded-lg overflow-hidden border border-primary/10">
+                  <Image 
+                    src={img.src} 
+                    alt={img.label} 
+                    fill 
+                    className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-3">
+                    <span className="text-[8px] font-mono text-primary uppercase tracking-widest">{img.label}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Featured Research / Manifesto */}
         {manifestoId && (
           <div className="max-w-4xl mx-auto text-left holographic-card p-12 border-primary/10">
