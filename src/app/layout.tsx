@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Aetheris Hub | Sovereign Intelligence",
   description: "High-resonance AI orchestration and quantum auditing.",
   icons: {
-    icon: "/logo-variation.jpg",
+    icon: "/icon.jpg",
   }
 };
 
