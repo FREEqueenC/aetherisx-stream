@@ -40,7 +40,22 @@ export default function HackMDNote({ noteId }: HackMDNoteProps) {
   return (
     <div className="prose prose-invert max-w-none">
       {title && <h2 className="text-2xl font-bold mb-6 text-primary glow-text-cyan uppercase tracking-widest">{title}</h2>}
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+      <ReactMarkdown 
+        remarkPlugins={[remarkGfm]}
+        components={{
+          img: ({ src, alt }) => (
+            <span className="block my-8 relative group">
+              <span className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
+              <img 
+                src={src} 
+                alt={alt} 
+                className="relative rounded-lg border border-primary/20 shadow-2xl w-full object-cover" 
+              />
+              {alt && <span className="block mt-2 text-[10px] font-mono text-primary/40 uppercase tracking-widest text-center">{alt}</span>}
+            </span>
+          ),
+        }}
+      >
         {content}
       </ReactMarkdown>
     </div>
