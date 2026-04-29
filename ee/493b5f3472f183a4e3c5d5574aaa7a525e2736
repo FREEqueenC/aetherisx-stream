@@ -1,0 +1,45 @@
+src/app/terms/page.tsx
+  a4224efa66b8aa4d 17,27,32
+src/app/upgrade/page.tsx
+  a4224efa66b8aa4d 44
+src/app/privacy/page.tsx
+  a4224efa66b8aa4d 12,20,32,37
+src/app/api/chat/route.ts
+  a4224efa66b8aa4d 26-31,38,47,69,105-107
+src/app/quantum/page.tsx
+  a4224efa66b8aa4d 99
+src/app/verify/page.tsx
+  a4224efa66b8aa4d 3
+src/lib/stripe.ts
+  a4224efa66b8aa4d 6
+src/app/ai/page.tsx
+  a4224efa66b8aa4d 63-65
+eslint.config.mjs
+  a4224efa66b8aa4d 15
+src/app/api/archives/route.ts
+  a4224efa66b8aa4d 18-20,23
+src/components/HackMDNote.tsx
+  a4224efa66b8aa4d 28
+src/app/api/webhooks/stripe/route.ts
+  a4224efa66b8aa4d 20-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "ee493b5f3472f183a4e3c5d5574aaa7a525e2736",
+  "prompts": {
+    "a4224efa66b8aa4d": {
+      "agent_id": {
+        "tool": "gemini",
+        "id": "9e54b6fd-cc14-4523-85be-809019421387",
+        "model": "unknown"
+      },
+      "human_author": "Ashleigh Walker",
+      "messages": [],
+      "total_additions": 41,
+      "total_deletions": 34,
+      "accepted_lines": 1038,
+      "overriden_lines": 0
+    }
+  }
+}
