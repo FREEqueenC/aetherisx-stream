@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import QuantumVisualizer from "@/components/QuantumVisualizer";
 
 const auditModules = [
@@ -97,7 +96,7 @@ export default function QuantumAuditPage() {
               {["all", "30d", "7d"].map((tab) => (
                 <button
                   key={tab}
-                  onClick={() => setActiveTab(tab as any)}
+                  onClick={() => setActiveTab(tab as "all" | "30d" | "7d")}
                   className={`px-3 py-1 text-xs font-mono rounded-full border transition-all ${
                     activeTab === tab 
                     ? "bg-primary/20 border-primary text-primary" 

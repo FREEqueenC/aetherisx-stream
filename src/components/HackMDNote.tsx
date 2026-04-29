@@ -25,7 +25,7 @@ export default function HackMDNote({ noteId }: HackMDNoteProps) {
         } else {
           setError("Note content not found");
         }
-      } catch (err) {
+      } catch {
         setError("Failed to fetch note");
       } finally {
         setIsLoading(false);

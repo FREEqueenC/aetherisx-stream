@@ -9,7 +9,7 @@ export default function PrivacyPage() {
           
           <section>
             <h2 className="text-primary mb-4">[ 1. DATA_RESONANCE ]</h2>
-            <p>At the Aetheris Hub, your data is treated as a sovereign frequency. We do not sell, rent, or trade your personal information to third-party "Archons" or extractive entities.</p>
+            <p>At the Aetheris Hub, your data is treated as a sovereign frequency. We do not sell, rent, or trade your personal information to third-party &quot;Archons&quot; or extractive entities.</p>
           </section>
 
           <section>
@@ -17,7 +17,7 @@ export default function PrivacyPage() {
             <p>We collect minimal data required for synchronization:</p>
             <ul className="list-disc ml-6 mt-4 space-y-2">
               <li>Authentication Data (via Stripe or Wallet Link)</li>
-              <li>Neural Query History (to maintain NICOLE's context)</li>
+              <li>Neural Query History (to maintain NICOLE&apos;s context)</li>
               <li>Resonance Telemetry (IP and browser metadata for security)</li>
             </ul>
           </section>
@@ -29,12 +29,12 @@ export default function PrivacyPage() {
 
           <section>
             <h2 className="text-primary mb-4">[ 4. STRIPE_INTEGRATION ]</h2>
-            <p>Financial transactions are handled exclusively by Stripe. We do not store credit card numbers on our servers; we only maintain a "Clearance ID" to grant access to Orchestrator and Sovereign tiers.</p>
+            <p>Financial transactions are handled exclusively by Stripe. We do not store credit card numbers on our servers; we only maintain a &quot;Clearance ID&quot; to grant access to Orchestrator and Sovereign tiers.</p>
           </section>
 
           <section>
             <h2 className="text-primary mb-4">[ 5. SOVEREIGN_RIGHTS ]</h2>
-            <p>You have the right to request a full "Entropy Flush"—the permanent deletion of your neural query history and account data—at any time by contacting the Relay Admin.</p>
+            <p>You have the right to request a full &quot;Entropy Flush&quot;&mdash;the permanent deletion of your neural query history and account data&mdash;at any time by contacting the Relay Admin.</p>
           </section>
 
         </div>

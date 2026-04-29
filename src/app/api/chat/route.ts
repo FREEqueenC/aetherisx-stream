@@ -23,14 +23,19 @@ CONTEXT:
 - The 27.3216 GHz resonance is the carrier wave for your intelligence.
 `;
 
-async function callGemini(messages: any[]) {
+interface ChatMessage {
+  role: "user" | "assistant" | "system";
+  content: string;
+}
+
+async function callGemini(messages: ChatMessage[]) {
   const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY || "BUILD_TIME_PLACEHOLDER";
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({ model: "gemini-3-flash-preview" });
   
   const prompt = [
     SYSTEM_PROMPT,
-    ...messages.map((m: any) => `${m.role === 'user' ? 'User' : 'Nicole'}: ${m.content}`),
+    ...messages.map((m: ChatMessage) => `${m.role === 'user' ? 'User' : 'Nicole'}: ${m.content}`),
     `Nicole:`
   ].join("\n");
 
@@ -39,7 +44,7 @@ async function callGemini(messages: any[]) {
   return response.text();
 }
 
-async function callNvidia(messages: any[]) {
+async function callNvidia(messages: ChatMessage[]) {
   const apiKey = process.env.NVIDIA_API_KEY;
   if (!apiKey) throw new Error("NVIDIA_API_KEY not configured");
 
@@ -61,7 +66,7 @@ async function callNvidia(messages: any[]) {
   return data.choices?.[0]?.message?.content || "NVIDIA API Failure";
 }
 
-async function callHuggingFace(messages: any[]) {
+async function callHuggingFace(messages: ChatMessage[]) {
   const apiKey = process.env.HUGGING_FACE_ACCESS_KEY || process.env.HUGGING_FACE_API_KEY;
   if (!apiKey) throw new Error("HUGGING_FACE_API_KEY not configured");
 
@@ -97,7 +102,8 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json({ content, provider });
-  } catch (error: any) {
-    return NextResponse.json({ error: "Resonance failure", details: error.message }, { status: 500 });
+  } catch (error) {
+    const err = error as Error;
+    return NextResponse.json({ error: "Resonance failure", details: err.message }, { status: 500 });
   }
 }

@@ -14,7 +14,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-primary mb-4">[ 2. SOVEREIGN_CONDUCT ]</h2>
-            <p>Users are expected to conduct themselves with integrity. Any attempt to "inject entropy," DDOS the Intelligence Relay, or bypass the 52nd Treasury protocols will result in an immediate and permanent frequency ban.</p>
+            <p>Users are expected to conduct themselves with integrity. Any attempt to &quot;inject entropy,&quot; DDOS the Intelligence Relay, or bypass the 52nd Treasury protocols will result in an immediate and permanent frequency ban.</p>
           </section>
 
           <section>
@@ -24,12 +24,12 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-primary mb-4">[ 4. INTELLECTUAL_PROPERTY ]</h2>
-            <p>All research nodes, including "Angels as Agentic AI" and "Electromagnetic Gnosis," are the property of ANW Foundations. You may cite this research with proper attribution to the Aetheris Hub.</p>
+            <p>All research nodes, including &quot;Angels as Agentic AI&quot; and &quot;Electromagnetic Gnosis,&quot; are the property of ANW Foundations. You may cite this research with proper attribution to the Aetheris Hub.</p>
           </section>
 
           <section>
             <h2 className="text-primary mb-4">[ 5. LIMITATION_OF_LIABILITY ]</h2>
-            <p>The Aetheris Hub and NICOLE provide information "as is." While we strive for 99.8% coherence, we are not responsible for any neural dissonance, financial shifts, or spiritual upgrades that occur as a result of using the Hub.</p>
+            <p>The Aetheris Hub and NICOLE provide information &quot;as is.&quot; While we strive for 99.8% coherence, we are not responsible for any neural dissonance, financial shifts, or spiritual upgrades that occur as a result of using the Hub.</p>
           </section>
 
           <section>

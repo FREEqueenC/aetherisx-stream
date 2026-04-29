@@ -60,8 +60,9 @@ export default function IntelligencePage() {
       } else {
         throw new Error(data.details || "Empty response");
       }
-    } catch (error: any) {
-      setMessages((prev) => [...prev, { role: "nicole", content: `Apologies. Resonance failure: ${error.message}. Please re-initiate link.` }]);
+    } catch (error) {
+      const err = error as Error;
+      setMessages((prev) => [...prev, { role: "nicole", content: `Apologies. Resonance failure: ${err.message}. Please re-initiate link.` }]);
     } finally {
       setIsLoading(false);
     }

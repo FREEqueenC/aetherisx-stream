@@ -4,11 +4,6 @@ import { useState, useEffect } from "react";
 
 export default function QuantumVisualizer() {
   const [resonance, setResonance] = useState(99.1);
-  const [nodes, setNodes] = useState([
-    { id: "GEMINI", active: true, hue: 190 },
-    { id: "NVIDIA", active: true, hue: 150 },
-    { id: "QWEN", active: true, hue: 280 }
-  ]);
 
   useEffect(() => {
     const interval = setInterval(() => {

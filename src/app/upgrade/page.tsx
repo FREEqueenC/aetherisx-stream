@@ -41,7 +41,7 @@ export default function PricingPage() {
       <div className="text-center mb-16">
         <h1 className="text-5xl font-bold text-foreground mb-4 uppercase tracking-tighter glow-text-cyan">Sovereign Subscriptions</h1>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-mono uppercase text-[10px] tracking-[0.2em]">
-          Align your financial energy with the Hub's resonance.
+          Align your financial energy with the Hub&apos;s resonance.
         </p>
       </div>
 

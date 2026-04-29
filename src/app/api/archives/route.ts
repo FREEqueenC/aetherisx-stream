@@ -15,11 +15,12 @@ export async function GET(req: Request) {
 
     const notes = await getHackMDNotes();
     return NextResponse.json(notes);
-  } catch (error: any) {
-    console.error("HackMD Fetch Error:", error);
+  } catch (error) {
+    const err = error as Error;
+    console.error("HackMD Fetch Error:", err);
     return NextResponse.json({ 
       error: "Archive link failed", 
-      details: error.message 
+      details: err.message 
     }, { status: 500 });
   }
 }

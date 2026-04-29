@@ -17,14 +17,14 @@ export async function POST(req: Request) {
       signature,
       process.env.STRIPE_WEBHOOK_SECRET || ""
     );
-  } catch (error: any) {
-    return new NextResponse(`Webhook Error: ${error.message}`, { status: 400 });
+  } catch (error) {
+    const err = error as Error;
+    return new NextResponse(`Webhook Error: ${err.message}`, { status: 400 });
   }
 
   const session = event.data.object as Stripe.Checkout.Session;
 
   if (event.type === "checkout.session.completed") {
-    const customerId = session.customer as string;
     const userEmail = session.customer_details?.email;
 
     console.log(`🔔 Resonance Synchronized: Payment received from ${userEmail}`);
