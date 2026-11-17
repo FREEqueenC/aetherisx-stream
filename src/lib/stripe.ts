@@ -15,3 +15,15 @@ export function getStripe(): Stripe {
   }
   return _stripe;
 }
+
+export const stripe = new Proxy({} as Stripe, {
+  get(_target, prop) {
+    const instance = getStripe();
+    const value = (instance as any)[prop];
+    if (typeof value === "function") {
+      return value.bind(instance);
+    }
+    return value;
+  },
+});
+

@@ -1,10 +1,11 @@
 "use server";
 
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
 export async function createCheckoutSession(priceId: string) {
+  const stripe = getStripe();
   const headerList = await headers();
   const origin = headerList.get("origin");
 
@@ -24,3 +25,4 @@ export async function createCheckoutSession(priceId: string) {
     redirect(session.url);
   }
 }
+
