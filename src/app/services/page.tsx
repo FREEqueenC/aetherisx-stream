@@ -171,7 +171,7 @@ export default function ServicesPage() {
       {/* Header */}
       <div className="text-center mb-16">
         <div className="mb-4 inline-block px-4 py-1 rounded-full bg-white/5 border border-primary/20 backdrop-blur-md">
-          <span className="text-[10px] font-mono text-primary tracking-[0.3em] uppercase">ANW Foundations â€¢ Engineering Advisory</span>
+          <span className="text-[10px] font-mono text-primary tracking-[0.3em] uppercase">ANW Foundations | Engineering Advisory</span>
         </div>
         <h1 className="text-4xl sm:text-6xl font-black mb-4 tracking-tighter uppercase glow-text-cyan">
           High-Ticket Engineering Services
@@ -202,11 +202,11 @@ export default function ServicesPage() {
           </div>
 
           <ul className="space-y-3 mb-8 flex-grow text-xs font-mono text-foreground/80">
-            <li className="flex items-center gap-2"><span className="text-primary font-bold">âœ“</span> Custom MCP server development</li>
-            <li className="flex items-center gap-2"><span className="text-primary font-bold">âœ“</span> Multi-step tool schemas &amp; guardrails</li>
-            <li className="flex items-center gap-2"><span className="text-primary font-bold">âœ“</span> Local &amp; cloud database connectors</li>
-            <li className="flex items-center gap-2"><span className="text-primary font-bold">âœ“</span> Test harness &amp; regression verification</li>
-            <li className="flex items-center gap-2"><span className="text-primary font-bold">âœ“</span> 7 to 10 business day turnaround</li>
+            <li className="flex items-center gap-2"><span className="text-primary font-bold">+</span> Custom MCP server development</li>
+            <li className="flex items-center gap-2"><span className="text-primary font-bold">+</span> Multi-step tool schemas and guardrails</li>
+            <li className="flex items-center gap-2"><span className="text-primary font-bold">+</span> Local and cloud database connectors</li>
+            <li className="flex items-center gap-2"><span className="text-primary font-bold">+</span> Test harness and regression verification</li>
+            <li className="flex items-center gap-2"><span className="text-primary font-bold">+</span> 7 to 10 business day turnaround</li>
           </ul>
 
           <button 
@@ -239,12 +239,12 @@ export default function ServicesPage() {
           </div>
 
           <ul className="space-y-3 mb-8 flex-grow text-xs font-mono text-foreground/80">
-            <li className="flex items-center gap-2"><span className="text-primary font-bold">âœ“</span> Responsive Next.js / React dApp interface</li>
-            <li className="flex items-center gap-2"><span className="text-primary font-bold">âœ“</span> Base L2 wallet connectors (MetaMask, Coinbase)</li>
-            <li className="flex items-center gap-2"><span className="text-primary font-bold">âœ“</span> Direct JSON-RPC node query integration</li>
-            <li className="flex items-center gap-2"><span className="text-primary font-bold">âœ“</span> Uniswap liquidity pool telemetry &amp; swaps</li>
-            <li className="flex items-center gap-2"><span className="text-primary font-bold">âœ“</span> Contract bytecode verification &amp; audit checks</li>
-            <li className="flex items-center gap-2"><span className="text-primary font-bold">âœ“</span> 14 to 21 business day turnaround</li>
+            <li className="flex items-center gap-2"><span className="text-primary font-bold">+</span> Responsive Next.js / React dApp interface</li>
+            <li className="flex items-center gap-2"><span className="text-primary font-bold">+</span> Base L2 wallet connectors (MetaMask, Coinbase)</li>
+            <li className="flex items-center gap-2"><span className="text-primary font-bold">+</span> Direct JSON-RPC node query integration</li>
+            <li className="flex items-center gap-2"><span className="text-primary font-bold">+</span> Uniswap liquidity pool telemetry and swaps</li>
+            <li className="flex items-center gap-2"><span className="text-primary font-bold">+</span> Contract bytecode verification and audit checks</li>
+            <li className="flex items-center gap-2"><span className="text-primary font-bold">+</span> 14 to 21 business day turnaround</li>
           </ul>
 
           <button 
@@ -274,11 +274,11 @@ export default function ServicesPage() {
           </div>
 
           <ul className="space-y-3 mb-8 flex-grow text-xs font-mono text-foreground/80">
-            <li className="flex items-center gap-2"><span className="text-purple-400 font-bold">âœ“</span> Multi-agent coordination swarms</li>
-            <li className="flex items-center gap-2"><span className="text-purple-400 font-bold">âœ“</span> Automated task delegation &amp; monitoring</li>
-            <li className="flex items-center gap-2"><span className="text-purple-400 font-bold">âœ“</span> BigQuery / GCP cloud serverless pipelines</li>
-            <li className="flex items-center gap-2"><span className="text-purple-400 font-bold">âœ“</span> Deterministic enterprise security boundaries</li>
-            <li className="flex items-center gap-2"><span className="text-purple-400 font-bold">âœ“</span> Founder-level engineering co-pilot sprints</li>
+            <li className="flex items-center gap-2"><span className="text-purple-400 font-bold">+</span> Multi-agent coordination swarms</li>
+            <li className="flex items-center gap-2"><span className="text-purple-400 font-bold">+</span> Automated task delegation and monitoring</li>
+            <li className="flex items-center gap-2"><span className="text-purple-400 font-bold">+</span> BigQuery / GCP cloud serverless pipelines</li>
+            <li className="flex items-center gap-2"><span className="text-purple-400 font-bold">+</span> Deterministic enterprise security boundaries</li>
+            <li className="flex items-center gap-2"><span className="text-purple-400 font-bold">+</span> Founder-level engineering co-pilot sprints</li>
           </ul>
 
           <button 
@@ -295,7 +295,7 @@ export default function ServicesPage() {
         <div className="mb-8">
           <span className="text-[10px] font-mono text-primary uppercase tracking-[0.3em]">Module Customizer</span>
           <h2 className="text-3xl font-black mt-2 uppercase tracking-tight text-foreground">
-            Interactive Scope &amp; Statement of Work Builder
+            Interactive Scope and Statement of Work Builder
           </h2>
           <p className="text-xs text-muted-foreground font-mono mt-1">
             Toggle modules to construct your exact delivery specification.
@@ -464,13 +464,13 @@ export default function ServicesPage() {
         <div className="mb-8">
           <span className="text-[10px] font-mono text-primary uppercase tracking-[0.3em]">Payment Channels</span>
           <h2 className="text-3xl font-black mt-2 uppercase tracking-tight text-foreground">
-            Direct Cryptographic &amp; Invoice Settlement
+            Direct Cryptographic and Invoice Settlement
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           <div className="p-6 rounded-lg bg-black/40 border border-white/5">
-            <div className="text-xs font-mono text-muted-foreground uppercase">Base L2 &amp; EVM (USDC / ETH)</div>
+            <div className="text-xs font-mono text-muted-foreground uppercase">Base L2 and EVM (USDC / ETH)</div>
             <div className="flex items-center justify-between mt-3 p-3 rounded bg-white/5 border border-white/5">
               <span className="text-xs font-mono text-slate-200 truncate mr-2">0x52De261665e8D1b488F76eec8742B592D9b292D8</span>
               <button 
@@ -568,7 +568,7 @@ export default function ServicesPage() {
           </div>
 
           <div>
-            <label htmlFor={briefTextareaId} className="block text-xs font-mono uppercase text-muted-foreground mb-2">Project Brief &amp; Objectives</label>
+            <label htmlFor={briefTextareaId} className="block text-xs font-mono uppercase text-muted-foreground mb-2">Project Brief and Objectives</label>
             <textarea 
               id={briefTextareaId}
               rows={4} 
@@ -584,12 +584,12 @@ export default function ServicesPage() {
             type="submit" 
             className="w-full py-4 font-mono text-xs uppercase tracking-widest font-bold rounded-lg bg-primary text-background shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:scale-[1.01] transition-all"
           >
-            Submit Brief &amp; Download Formal Statement of Work
+            Submit Brief and Download Formal Statement of Work
           </button>
 
           {submitted && (
             <div className="p-4 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-mono text-xs">
-              âœ“ Project brief formatted and queued. Your custom SOW file has been downloaded. Ashleigh Walker will contact {clientEmail} within 24 hours.
+              Project brief formatted and queued. Your custom SOW file has been downloaded. Ashleigh Walker will contact {clientEmail} within 24 hours.
             </div>
           )}
         </form>
